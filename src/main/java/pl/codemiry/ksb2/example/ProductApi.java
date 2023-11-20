@@ -1,4 +1,4 @@
-package pl.codemiry.ksb2;
+package pl.codemiry.ksb2.example;
 
 import org.springframework.web.bind.annotation.*;
 
