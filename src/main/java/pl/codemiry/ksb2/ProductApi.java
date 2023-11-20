@@ -5,10 +5,15 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("/products")
 public class ProductApi {
-    @RequestMapping(method = RequestMethod.GET)
-    public String getProducts() {
-        return "Hello World with GET";
+    @RequestMapping(method = RequestMethod.GET, value = "/{age}")
+    public String getProducts(@RequestParam String name,
+                              @RequestParam(required = false, defaultValue = "") String surname,
+                              @PathVariable(required = false) String age,
+                              @RequestHeader(required = false, defaultValue = "") String description,
+                              @RequestBody(required = false) String info) {
+        return "Hello " + name + " " + surname + " masz " + age + " lat." + description + " " + info;
     }
+
 
     @PostMapping
     public String addProducts() {
